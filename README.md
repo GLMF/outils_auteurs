@@ -8,6 +8,6 @@ Le format utilisé est de l'OpenDocument (ODT) et nous vous conseillons de confi
 
 Un fichier permettant de définir des raccourcis est également disponible (menu Outils > Personnaliser puis bouton Charger...).
 
-Certains auteurs ont fourni des outils permettant de travailler en Markdown ou en Asciidoc : ![outils externes](https://github.com/GLMF/outils_auteurs/blob/master/outils_externes.md)
+Certains auteurs ont fourni des outils permettant de travailler en Markdown ou en Asciidoc : [outils externes](https://github.com/GLMF/outils_auteurs/blob/master/outils_externes.md)
 
 N'hésitez pas à partager toute correction ou amélioration !
