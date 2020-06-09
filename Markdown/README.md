@@ -1,14 +1,14 @@
-<p align="center"><img width=12.5% src="https://github.com/glmf/outils_auteur/Markdown/blob/master/images/logo_glmf.png"></p>
+<p align="center"><img width=12.5% src="https://raw.githubusercontent.com/GLMF/outils_auteurs/master/Markdown/logo_glmf.png"></p>
  
-&nbsp;&nbsp;...
-![GLMF](https://img.shields.io/badge/GNU%2FLinux%20Magazine-tools-red)
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)
+<p align="center">![GLMF](https://img.shields.io/badge/GNU%2FLinux%20Magazine-tools-red) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)</p>
 &nbsp;
 =======
  
-[md-auteur](Markdown md-auteur) est un projet permettant aux auteurs de GNU/Linux Magazine de rédiger leurs articles en Markdown et de les exporter en odt dans le format attendu pour une soumission.
+**Markdown md-auteur** est un projet permettant aux auteurs de GNU/Linux Magazine de rédiger leurs articles en Markdown et de les exporter en odt dans le format attendu pour une soumission.
+L'objet de ce dépôt est de simplifier l'accès à l'excellent travail réalisé par Alain Basty sur [Pandoc md-auteur](https://bitbucket.org/zardoz/pandoc-md-auteur).
+La version de Pandoc md-auteur utilisée dans ce dépôt est figée et les mises à jour seront effectuées manuellement par sécurité.
  
-## Table of content
+## Table des matières
 - [Installation](#installation)
 - [Utilisation](#utilisation)
     - [Créer un article](#créer-un-article)
