@@ -21,7 +21,8 @@ La version de Pandoc md-auteur utilisée dans ce dépôt est figée et les mises
 L'installation est très simple :
 1. Assurez-vous d'avoir bien installé Docker
 2. Clonez le dépôt par :
-`$ git clone https://github.com/GLMF/outils_auteurs`
+`$ git clone git@github.com:GLMF/outils_auteurs.git`
+
 3. Rendez-vous dans le répertoire du sous-projet :
 `$ cd outils-auteurs/Markdown`
 4. Lancez le programme d'installation :
