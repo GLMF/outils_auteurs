@@ -1,15 +1,10 @@
 #!/bin/bash
 
 
-readonly URL='https://github.com/GLMF/outils_auteurs/Markdown/md-auteur'
-
-
 start_install() {
-    echo "1/3 : Téléchargement de l'application"
-    wget ${URL}
-    echo '2/3 : Création du volume glmf'
+    echo '1/2 : Création du volume glmf'
     docker volume create glmf
-    echo "3/3 : Construction de l'image"
+    echo "2/2 : Construction de l'image"
     docker build --tag md-auteur .
     
     echo ''
