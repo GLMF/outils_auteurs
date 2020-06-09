@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var main,vscode=require("vscode"),Main_1=require("./Main");function activate(e){main=new Main_1.default(e),vscode.workspace.onDidChangeConfiguration(function(e){main.configUpdate(e)})}function deactivate(){main.destroy()}exports.activate=activate,exports.deactivate=deactivate;
