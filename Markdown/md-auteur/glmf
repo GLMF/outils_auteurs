@@ -34,6 +34,7 @@ create_article() {
     make select-glmf
 
     if [ "${EDITOR}" != '' ]; then
+        install_extensions
         ${EDITOR} ${1}.md
     else
         echo "Article prêt à être édité dans ${DIR_USER}/${1} !"
@@ -80,6 +81,21 @@ verify_article() {
     exit 0
 }
 
+# Installation automatique des extensions recommandées pour $EDITOR
+install_extensions() {
+    case "${EDITOR}" in
+        code)
+            if [ ! -d "${DIR_USER}/.vscode/extensions" ]; then
+                echo "Installation des extensions recommandées pour VS Code…"
+                code --install-extension --force streetsidesoftware.code-spell-checker
+                code --install-extension --force streetsidesoftware.code-spell-checker-french
+                code --install-extension --force shd101wyy.markdown-preview-enhanced
+                code --install-extension --force stkb.rewrap
+                code --install-extension --force fooxly.themeswitch
+            fi
+            ;;
+    esac
+}
 
 usage ${1}
 if [ "${1}" == 'new' ]; then
