@@ -1,0 +1,74 @@
+{
+	"name": "code-spell-checker-french",
+	"description": "French dictionary extension for VS Code.",
+	"version": "0.1.6",
+	"displayName": "French - Code Spell Checker",
+	"icon": "images/SpellCheck.png",
+	"preview": true,
+	"private": true,
+	"publisher": "streetsidesoftware",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"categories": [
+		"Linters",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"qna": "marketplace",
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "cSpellExt_french.enableFrench",
+				"title": "Enable French Spell Checker Dictionary"
+			},
+			{
+				"command": "cSpellExt_french.disableFrench",
+				"title": "Disable French Spell Checker Dictionary"
+			},
+			{
+				"command": "cSpellExt_french.enableFrenchWorkspace",
+				"title": "Enable French Spell Checker Dictionary in Workspace"
+			},
+			{
+				"command": "cSpellExt_french.disableFrenchWorkspace",
+				"title": "Disable French Spell Checker Dictionary in Workspace"
+			}
+		]
+	},
+	"extensionDependencies": [
+		"streetsidesoftware.code-spell-checker"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Jason3S/vscode-cspell-dict-extensions"
+	},
+	"bugs": {
+		"url": "https://github.com/Jason3S/vscode-cspell-dict-extensions/issues"
+	},
+	"license": "MIT",
+	"scripts": {
+		"clean": "rimraf out",
+		"clean-build": "npm run clean && npm run build",
+		"publish-extension": "vsce publish",
+		"vscode:prepublish": "npm run build",
+		"build": "tsc -p ./",
+		"prepare": "npm run build",
+		"watch": "tsc -watch -p ./",
+		"test": "node ../../node_modules/vscode/bin/test"
+	},
+	"dependencies": {
+		"cspell-dict-fr-fr": "^1.2.11"
+	},
+	"__metadata": {
+		"id": "d18e0c5a-855e-433e-996a-e0fb4c107213",
+		"publisherId": "67600ca7-88fb-4104-9f7e-dd51c00facf2",
+		"publisherDisplayName": "Street Side Software"
+	}
+}

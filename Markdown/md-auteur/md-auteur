@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker run --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+           --tty --interactive \
+           --volume /home/tristan/Diamond_Editions/Projets/Pandoc/container/data:/home/glmf md-auteur

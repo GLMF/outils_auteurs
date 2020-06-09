@@ -1,0 +1,99 @@
+#!/bin/bash
+
+readonly DIR_MD_AUTEUR='/opt/pandoc-md-auteur'
+readonly DIR_USER='/home/glmf'
+
+
+usage() {
+    if [ "${1}" == "help" ]; then
+        echo 'Usage: glmf new <article_name> | make | verify'
+        echo '       new <article_name>   : Crée un nouvel article <article_name> dans le répertoire du même nom.'
+        echo "       make                 : Génère le fichier odt et les images de l'article présents dans le répertoire courant."
+        echo '       verify               : Génère le fichier odt en y intégrant les images (pour vérification / relecture).'
+        echo ''
+        echo 'glmf help : affiche ce message'
+        exit 0
+    fi
+}
+
+# Crée un nouvel article
+# ${1} : nom de l'article
+create_article() {
+    echo "Création d'un nouvel article : ${1}"
+
+    if [ -d "${DIR_USER}/${1}" ]; then
+        echo "Le répertoire ${DIR_USER}/${1} existe déjà !"
+        echo 'Opération annulée !'
+        exit 1
+    fi
+
+    cd ${DIR_MD_AUTEUR}
+    make new dir=${DIR_USER}/${1}
+
+    cd ${DIR_USER}/${1}
+    make select-glmf
+
+    if [ "${EDITOR}" != '' ]; then
+        ${EDITOR} ${1}.md
+    else
+        echo "Article prêt à être édité dans ${DIR_USER}/${1} !"
+    fi
+
+    exit 0
+}
+
+
+# Génère l'article final pour soumission
+# ainsi qu'une archive au format tgz
+make_article() {
+    echo "Génération de l'article pour soumission"
+    
+    if [ -f "Makefile" ]; then
+        make clean
+        make
+        rm -R build/modele-article-gnulinuxmagazine.odt
+        chmod 666 build/"${PWD##*/}".odt
+
+        # Create package tgz
+        tar -C build -czvf "${PWD##*/}".tgz .
+    else
+        echo "Aucun fichier Makefile dans le répertoire courant. Vous n'êtes pas dans le répertoire d'un article !"
+        exit 1
+    fi
+
+    exit 0
+}
+
+# Génère un article contenant les images
+# pour vérification
+verify_article() {
+    echo "Génération de l'article pour vérification"
+
+    if [ -f "Makefile" ]; then
+        make clean
+        make IMAGES=on
+    else
+        echo "Aucun fichier Makefile dans le répertoire courant. Vous nêtes pas dans le répertoire d'un article !"
+        exit 1
+    fi
+
+    exit 0
+}
+
+
+usage ${1}
+if [ "${1}" == 'new' ]; then
+    if [ "${#}" -ne 2 ]; then
+        echo 'Syntax: glmf new <article_name>'
+        exit 1
+    else
+        create_article ${2}
+    fi
+elif [ "${#}" -eq 1 ]; then
+    if [ "${1}" == 'make' ]; then
+        make_article
+    elif [ "${1}" == 'verify' ]; then
+        verify_article
+    fi
+fi
+usage 'help'
