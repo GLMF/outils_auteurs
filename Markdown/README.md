@@ -1,6 +1,6 @@
 <p align="center"><img width=12.5% src="https://raw.githubusercontent.com/GLMF/outils_auteurs/master/Markdown/logo_glmf.png"></p>
  
-<p align="center">[![GLMF](https://img.shields.io/badge/GNU%2FLinux%20Magazine-tools-red)](https://github.com/GLMF/outils_auteurs) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)</p>
+[![GLMF](https://img.shields.io/badge/GNU%2FLinux%20Magazine-tools-red)](https://github.com/GLMF/outils_auteurs) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)
 &nbsp;
 =======
  
