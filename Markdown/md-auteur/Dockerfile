@@ -22,13 +22,13 @@ RUN gdebi --n /tools/code_1.45.1-1589445302_amd64.deb
 RUN rm /tools/code_1.45.1-1589445302_amd64.deb
 
 # Install md-auteur
-COPY pandoc-md-auteur /opt/pandoc-md-auteur
+COPY md-auteur/pandoc-md-auteur /opt/pandoc-md-auteur
 
 # User glmf creation
 RUN useradd -d /home/glmf glmf
 
 # Copy glmf tool 
-COPY glmf /opt/tools/glmf
+COPY md-auteur/glmf /opt/tools/glmf
 RUN chown -R glmf:glmf /opt/tools
 
 USER glmf

@@ -5,7 +5,7 @@ start_install() {
     echo '1/2 : Création du volume glmf'
     docker volume create glmf
     echo "2/2 : Construction de l'image"
-    docker build --tag md-auteur .
+    docker build -f md-auteur/Dockerfile .
     
     echo ''
     echo 'Instructions :'
