@@ -24,9 +24,9 @@ L'installation est très simple :
 `$ git clone git@github.com:GLMF/outils_auteurs.git`
 
 3. Rendez-vous dans le répertoire du sous-projet :
-`$ cd outils-auteurs/Markdown`
+`$ cd outils-auteurs/Markdown/md-auteur`
 4. Lancez le programme d'installation :
-`$ install_glmf`
+`$ ../install_glmf`
  
 ## Utilisation
 Pour utiliser cet outil, vous pourrez travailler dans une image et récupérer vos fichiers dans le répertoire `md-auteur/data`.
