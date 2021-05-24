@@ -31,6 +31,7 @@ create_article() {
     make new dir=${DIR_USER}/${1}
 
     cd ${DIR_USER}/${1}
+    cp -r ${DIR_MD_AUTEUR}/* .
     make select-glmf
 
     if [ "${EDITOR}" != '' ]; then
