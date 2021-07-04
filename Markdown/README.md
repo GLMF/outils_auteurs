@@ -24,15 +24,17 @@ L'installation est très simple :
 `$ git clone git@github.com:GLMF/outils_auteurs.git`
 
 3. Rendez-vous dans le répertoire du sous-projet :
-`$ cd outils-auteurs/Markdown`
+`$ cd outils-auteurs/Markdown/md-auteur`
 4. Lancez le programme d'installation :
-`$ install_glmf`
+`$ ../install_glmf`
  
 ## Utilisation
 Pour utiliser cet outil, vous pourrez travailler dans une image et récupérer vos fichiers dans le répertoire `md-auteur/data`.
 Plusieurs actions sont possibles après avoir lancé l'image par :
 
-`$ md-auteur`
+`$ md-auteur /home/tristan/Diamond_Editions/Projets/Pandoc/container/data`
+
+Attention de bien donner le chemin absolu vers le répertoire data. Si le répertoire est faux, le système sera en lecture seule.
 
 ### Créer un article
 Pour créer un article `7653_Mon_Super_Article` :
